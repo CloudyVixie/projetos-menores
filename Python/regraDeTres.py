@@ -1,40 +1,56 @@
-print("\n==========")
-print("X1 - > Y1 \nX2 - > Y2")
-print("==========")
+print("\n==========\nX1 - > Y1 \nX2 - > Y2\n==========")
 print("\nLembre-se de que X simboliza a razão, enquanto Y a proporção!")
 
-# Volta o código do início toda vez que há um erro
+
+# Faz com que se repita o trecho do código em caso de erros que fariam o tudo quebrar // Não estou utilizando if pois ainda não encontrei uma solução que impeça o programa de cair no ValueError utilizando if
 while True:
     try:
-        x1 = float(input("Insira o numerador da razão (X1): "))
-        x2 = float(input("Insira o denominador da razão (X2): "))
+        x1 = float(input("Insira o valor de X1: "))
+        x2 = float(input("Insira o valor de X2: "))
+        break
+    except:
+        print("\nUm dos valores está no formato incorreto! vamos tentar novamente do início!\n\n")
 
-        print("\n==========")
-        print(f"{x1} - > Y1 \n{x2} - > Y2")
-        print("==========")
-
-        incognita = input("\nO que deseja descobrir da proporção? O numerador(Y1) ou denominador(Y2)?: (n/d): ")
-        incognita.lower()
+print(f"\n==========\n{x1} - > Y1 \n{x2} - > Y2\n==========")
 
 
-# Repetição caso a resposta seja diferente do que a desejada
-        while incognita != "d" and incognita != "n":
-            print("Resposta não identificada! Tente novamente!")
-            incognita = input("O que deseja descobrir da proporção? O numerador(Y1) ou denominador(Y2)?: (n/d): ")
+# Criei funções para diminuir a quantia de código lá em baixo e caso queira mudar algo, eu posso alterar diretamente na própria função sem alterar todo o resto
+def calcularDenominador(y1):
+    y2 = (x2*y1)/x1
+    print(f"\n==========\n{x1} - > {y1} \n{x2} - > {y2}\n==========")
 
-# Condicionais para a descoberta do denominador (número de baixo) ou numerador (numero de cima)
-        if incognita == "d":
-            y1 = float(input("Insira o numerador (Y1): "))
-            y2 = (x2*y1)/x1
-            print(f"RESULTADO:\n {x1} - > {y1} \n{x2} - > {y2}")
-        elif incognita == "n":
-            y2 = float(input("Insira o denominador (Y2): "))
-            y1 = (x1*y2)/x2
-            print(f"RESULTADO:\n {x1} - > {y1} \n{x2} - > {y2}")
-            
-# Caso até aqui não haja nenhum erro, sai do "While True" lá do começo
+def calcularNumerador(y1):
+    y1 = y1 = (x1*y2)/x2
+    print(f"\n==========\n{x1} - > {y1} \n{x2} - > {y2}\n==========")
+
+
+incognita = input("Você deseja descobrir o numerador(Y1) ou o denominador(Y2)? (n/d): ")
+# ".lower()" faz com que não importe se é inserido o texto em maiúsculo ou minúsculo. porque no fim, será transformado em minúsculo universalmente
+incognita.lower()
+
+
+# Aqui fiz um loop pra caso o usuário insira algo diferente do esperado. Acabou não sendo necessário usar Try e Except pois não há indicador de tipo de variável (como "float(input)"), logo, qualquer coisa inserida no input é lida como String(texto). Até mesmo os números
+while incognita != "n" and incognita != "d":
+    print("\nResposta fora dos parâmetros esclarecidos! Responda com 'D' para denominador ou 'N' para numerador! ")
+    incognita = input("Você deseja descobrir o numerador(Y1) ou o denominador(Y2)? (n/d): ")
+    incognita.lower()
+
+# Aqui é necessário usar um Try e Except pois a variável "y2" utiliza um Input no formato Float, ou seja, inserir qualquer outro tipo de caractere ocasionará em ValueError
+if incognita == "n":
+    while True:
+        try:
+            y2 = float(input("Insira o denominador(Y2): "))
             break
-        
-# Capta o erro de quando é inserido um valor do tipo errado (geralmente strings).
-    except ValueError:
-        print("\nVocê está inserindo texto onde só entra números! Vamos voltar ao início \n")
+        # Coloquei "ValueError" no Except justamente pra quando der esse erro em específico, mostrar a mensagem que quero. Caso apareça outro tipo de erro, o terminal vai dizer qual é, e então criarei outro Except para o erro posterior (caso haja)
+        except ValueError:
+            print("\nVocê deve inserir apenas números! Vamos tentar novamente...\n")       
+    calcularNumerador(y2)
+    
+elif incognita == "d":
+    while True:
+        try:
+            y1 = float(input("Insira o numerador(Y1): "))
+            break
+        except ValueError:
+            print("\nVocê deve inserir apenas números! Vamos tentar novamente...\n")
+    calcularDenominador(y1)
