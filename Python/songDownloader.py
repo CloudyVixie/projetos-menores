@@ -8,13 +8,13 @@ def baixarMusicas():
     url = input("Insira a URL da música/playlist a ser baixada (Apenas URL do youtube!): ")
     opcoes = {
         "format" : "bestaudio",
-        "merge_output_format" : "mp4",
         "outtmpl" : f"{home}\Downloads\%(title)s.%(ext)s",
         "quiet" : True,
         "no_warnings" : True
     }
     with YoutubeDL(opcoes) as ydl:
         ydl.download([url])
+    
 
 escolha = str(input("[1] - Baixar uma música/playlist \n[2] - Baixar várias músicas/playlists\n->"))
 while escolha != "1" and escolha != "2":
@@ -33,5 +33,5 @@ elif escolha == "2":
     for i in range(quantia):
         baixarMusicas()
         print(f"[{i+1}º DOWNLOAD TERMINADO!]")
-    
+print("Programa finalizado com sucesso!")
 
