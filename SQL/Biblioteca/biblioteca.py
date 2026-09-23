@@ -8,7 +8,13 @@ from InquirerPy import prompt
 
 
 # cria conexão com banco e estabelece o cursor, que é por onde são executadas as querrys
-conexao = sqlite3.connect("biblioteca.db")
+import sqlite3
+import os
+
+# tive que colocar isso porque o arquivo .db estava indo pra raiz do repositório
+pasta = os.path.dirname(__file__)
+conexao = sqlite3.connect(os.path.join(pasta, "biblioteca.db"))
+
 cursor = conexao.cursor()
 
 
