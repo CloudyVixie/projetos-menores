@@ -1,103 +1,71 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,45:0b2740,100:123e5a&height=190&section=header&text=projetos-menores&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=pequenos%20projetos%20e%20experimentos&descAlignY=65&descSize=16&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,45:0b2740,100:123e5a&height=190&section=header&text=projetos-menores&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=experimentos%20%7C%20estudos%20%7C%20pequenas%20ideias&descAlignY=65&descSize=16&animation=fadeIn" width="100%"/>
 <br>
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=400&size=17&duration=3500&pause=1200&color=8FD3FF&center=true&vCenter=true&width=650&lines=Um+espa%C3%A7o+para+testar+ideias;Pequenos+projetos+feitos+durante+os+estudos;Aprendendo+um+pouco+de+cada+vez" alt="Animação de texto"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=400&size=17&duration=3500&pause=1200&color=8FD3FF&center=true&vCenter=true&width=650&lines=Pequenos+projetos+feitos+durante+os+estudos;Testando+ideias+e+conceitos;Um+projeto+de+cada+vez" alt="Animação de texto"/>
 </div>
+<br>
+
+☁️ Sobre
+
+Um espaço para guardar pequenos projetos, exercícios e ideias que surgem durante os estudos.
+
+Aqui ficam desde programas bem simples até experimentos um pouco mais completos — sem a preocupação de transformar tudo em um grande projeto.
 
 ⸻
 
-☁️ Sobre este repositório
+🐍 Tecnologias
 
-Este repositório reúne projetos pequenos, exercícios e testes feitos durante os estudos de programação.
+<div align="center">
+<img src="https://skillicons.dev/icons?i=python,java,javascript,php,html,css,postgres,mariadb&theme=dark"/>
+</div>
+<br>
 
-Alguns nasceram de uma necessidade simples do dia a dia. Outros servem apenas para testar uma ideia, praticar algum conceito ou entender melhor uma ferramenta.
+Atualmente, Python é a linguagem mais presente neste repositório.
 
-Não existe uma proposta de transformar cada projeto em algo grande. A ideia é justamente ter um lugar para guardar essas pequenas experiências e acompanhar a evolução ao longo do tempo.
+Java, JavaScript e PHP aparecem conforme novos conteúdos entram nos estudos.
+
+Para banco de dados, os projetos utilizam PostgreSQL e MariaDB.
 
 ⸻
 
-🌊 Organização
+📂 Estrutura
 
 projetos-menores/
 │
 ├── 🐍 Python/
-│   ├── projetos
-│   └── exercícios
+│   ├── ...
+│   └── ...
 │
 ├── 📄 LICENSE
 └── 📖 README.md
 
-A organização pode mudar conforme novos projetos forem adicionados.
+Os projetos ficam separados principalmente por linguagem, deixando a navegação mais simples conforme o repositório cresce.
 
 ⸻
 
-🐍 Python
+🧩 Projetos
 
-A maior parte dos projetos deste repositório está relacionada aos estudos de Python, principalmente exercícios e pequenos programas criados para praticar conceitos da linguagem.
+Projeto	Tecnologia	Sobre
+🐍 Python	Python	Exercícios, pequenos programas e experimentos
+☕ Java	Java	Estudos e testes com a linguagem
+🌐 Web	HTML · CSS · JS · PHP	Pequenas experiências com desenvolvimento Web
+🗄️ Banco de dados	PostgreSQL · MariaDB	Exercícios e testes com SQL
+
+A lista será atualizada conforme novos projetos forem adicionados.
+
+⸻
+
+🌱 Em estudo
 
 <div align="center">
-<img src="https://skillicons.dev/icons?i=python&theme=dark"/>
+
+Python · Java · JavaScript · PHP · SQL
+
 </div>
-
-O que aparece por aqui
-
-* Fundamentos de Python
-* Estruturas de dados
-* Funções
-* Classes e objetos
-* Programação Orientada a Objetos
-* Módulos
-* Pequenas automações
-* Exercícios para testar conceitos
-
-⸻
-
-🪼 Pequenos projetos
-
-Projeto	Linguagem	Descrição
-🐍 Projetos em Python	Python	Pequenos programas e exercícios desenvolvidos durante os estudos
-
-Conforme novos projetos forem surgindo, esta lista será atualizada.
-
-⸻
-
-🌱 Em andamento
-
-Estudando
-│
-├── Python
-│   ├── Fundamentos
-│   ├── POO
-│   └── Módulos
-│
-├── Java
-├── JavaScript
-├── PHP
-│
-└── SQL
-    ├── PostgreSQL
-    └── MariaDB
-
-Alguns assuntos ainda estão no começo, então este repositório também funciona como um registro desse processo.
-
-⸻
-
-🌫️ Sobre os projetos
-
-Os projetos aqui não têm necessariamente o mesmo nível de complexidade.
-
-Alguns são exercícios simples feitos para entender um conceito específico. Outros surgem de alguma ideia que pareceu interessante colocar em prática.
-
-A intenção é manter tudo relativamente simples e legível, deixando claro o que estava sendo estudado em cada momento.
-
-⸻
-
-<div align="center">
 <br>
+<div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:123e5a,50:0b2740,100:07111f&height=100&section=footer" width="100%"/>
-<sub>
 
-☁️ pequenos projetos, pequenas ideias, um pouco de prática por vez.
+feito aos poucos, conforme novas ideias aparecem.
 
-</sub>
 </div>
