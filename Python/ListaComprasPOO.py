@@ -20,6 +20,7 @@ total_valores = []
 
 while True:
     try:
+        nome_lista = input("Dê um nome a lista de compras: ")
         tamanho_lista = int(input("Insira quantos itens estarão na lista: "))
 
         for item_lista in range(tamanho_lista):
@@ -33,14 +34,14 @@ while True:
             lista.append(produto)
             total_valores.append(total)
         
-        with open("Lista.txt", "w", encoding="utf-8") as arquivo:
+        with open(f"{nome_lista}.txt", "w", encoding="utf-8") as arquivo:
             for produto in lista:
                 arquivo.write(produto.formatar())
                 arquivo.write("\n")
 
 
             total = sum(total_valores)
-            arquivo.write(f"Somatório geral: {total:.2f}")
+            arquivo.write(f"Somatório geral: R${total:.2f}")
         break
 
 
