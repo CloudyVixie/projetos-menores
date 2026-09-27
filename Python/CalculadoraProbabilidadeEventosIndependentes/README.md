@@ -1,25 +1,27 @@
-# 📊 Calculadora de Probabilidade de Eventos Independentes
+# 📊 Calculadora de Probabilidade
 
-> Uma calculadora de terminal para estimar quantas tentativas são necessárias para atingir uma determinada probabilidade acumulada de sucesso.
+Uma calculadora de terminal para estimar tentativas até alcançar uma chance acumulada desejada.
 
-## ✨ Sobre o projeto
+## ☁️ Sobre
 
-Este projeto une **matemática e programação em Python**. A aplicação recebe a chance de sucesso de uma tentativa e a probabilidade acumulada desejada, calculando a quantidade de tentativas necessária para alcançar esse objetivo.
+O programa recebe a chance de sucesso de uma tentativa.
+
+Depois, recebe a chance acumulada desejada e calcula quantas tentativas são necessárias.
+
+O cálculo considera que cada tentativa é independente.
 
 ## 🧠 Conceitos praticados
 
-- Variáveis e tipos numéricos
-- Entrada e validação de dados
-- Estruturas condicionais
-- Laços de repetição
+- Variáveis
+- Números
+- Entrada de dados
+- Validação
+- Condições
+- Laços
 - `try/except`
-- Logaritmos com `math.log()`
-- Arredondamento com `math.ceil()`
-- Organização do terminal com `os`
-
-## 🔢 Como funciona
-
-O cálculo considera a probabilidade de **não obter sucesso** em uma tentativa e determina quantas tentativas independentes são necessárias para que a chance acumulada de pelo menos um sucesso alcance o valor desejado.
+- `math.log()`
+- `math.ceil()`
+- `os`
 
 ## ▶️ Execução
 
@@ -31,16 +33,16 @@ python CalculadoraProbabilidadeEventosIndependentes.py
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-Utiliza apenas recursos da biblioteca padrão do Python.
+O projeto usa apenas recursos da biblioteca padrão do Python.
 
 ## 📁 Estrutura
 
-```
+```text
 CalculadoraProbabilidadeEventosIndependentes/
 ├── CalculadoraProbabilidadeEventosIndependentes.py
 └── README.md
 ```
 
----
+## 📄 Licença
 
-📚 **Projeto de estudo** — desenvolvido para praticar lógica, matemática e fundamentos de Python.
+Este projeto usa a licença MIT do repositório principal.
