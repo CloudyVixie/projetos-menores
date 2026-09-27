@@ -1,32 +1,39 @@
 # 🛒 Lista de Compras — POO
 
-> Uma lista de compras desenvolvida para praticar Programação Orientada a Objetos em Python.
+Uma lista de compras feita para praticar Programação Orientada a Objetos em Python.
 
-## ✨ Sobre o projeto
+## ☁️ Sobre
 
-O programa permite cadastrar produtos informando **nome, quantidade e valor**. Cada produto é representado por um objeto da classe `Produto`.
+O programa cadastra produtos com nome, quantidade e valor.
 
-Ao final, os dados são formatados e gravados em um arquivo de texto, incluindo o valor total da lista.
+Cada produto é criado como um objeto da classe `Produto`.
 
-## 🧱 Orientação a objetos
+No fim, os dados são formatados e salvos em um arquivo de texto.
 
-A classe `Produto` representa um item da lista e reúne seus dados e comportamento. O projeto é um exercício prático para entender como atributos, métodos e objetos podem representar elementos do mundo real.
+O arquivo também mostra o valor total da lista.
+
+## 🧱 Classe Produto
+
+A classe `Produto` reúne os dados de cada item.
+
+O projeto ajuda a entender como atributos, métodos e objetos funcionam juntos.
 
 ## 🧠 Conceitos praticados
 
-- Classes e objetos
+- Classes
+- Objetos
 - Atributos
 - Métodos
 - Construtor
 - Listas de objetos
-- Laços de repetição
+- Laços
 - Entrada de dados
-- Manipulação de arquivos
-- Cálculo de valores
+- Arquivos
+- Cálculos
 
 ## 📄 Resultado
 
-O programa gera um arquivo `.txt` com os produtos cadastrados e o total da compra.
+O programa cria um arquivo `.txt` com os produtos e o total da compra.
 
 ## ▶️ Execução
 
@@ -38,19 +45,19 @@ python ListaComprasPOO.py
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-Bibliotecas utilizadas:
+Bibliotecas usadas:
 
 - `time`
 - `os`
 
 ## 📁 Estrutura
 
-```
+```text
 ListaComprasPOO/
 ├── ListaComprasPOO.py
 └── README.md
 ```
 
----
+## 📄 Licença
 
-🧩 **Projeto de estudo** — desenvolvido para praticar POO e começar a estruturar programas utilizando objetos.
+Este projeto usa a licença MIT do repositório principal.
