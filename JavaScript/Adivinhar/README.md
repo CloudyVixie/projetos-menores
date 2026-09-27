@@ -1,38 +1,37 @@
-# 🎯 Adivinhação
+# 🎯 Adivinhar
 
-Um pequeno jogo de adivinhação desenvolvido com **HTML, CSS e JavaScript**.
-
-O objetivo é tentar descobrir um número entre **0 e 100**. A cada tentativa, o jogo informa se o palpite está acima ou abaixo do número definido e contabiliza a quantidade de tentativas.
+Um pequeno jogo feito com HTML, CSS e JavaScript para praticar lógica no navegador.
 
 ## 🕹️ Como funciona
 
-- O jogador informa um número entre **0 e 100**.
-- Ao clicar em **Tentar**, o palpite é comparado com o número secreto.
-- Caso o palpite seja maior, uma mensagem informa que está acima.
-- Caso seja menor, uma mensagem informa que está abaixo.
-- Quando o número é acertado, a quantidade de tentativas é exibida.
-- O número utilizado atualmente no jogo é **43**.
+O jogo escolhe um número entre 0 e 100.
+
+A pessoa informa um palpite e recebe uma dica sobre o valor escolhido.
+
+O jogo mostra quando o palpite está acima ou abaixo do número.
+
+Também conta quantas tentativas foram feitas.
+
+O número usado no código atual é **43**.
 
 ## 🧠 Conceitos praticados
 
-Este projeto foi desenvolvido como exercício de introdução ao JavaScript, praticando:
-
-- Manipulação do **DOM**
+- DOM
 - `document.getElementById()`
 - Eventos com `onclick`
-- Variáveis com `let` e `const`
-- Estruturas condicionais (`if` / `else if`)
+- `let` e `const`
+- `if` e `else if`
 - Operadores de comparação
 - Operador lógico `||`
 - Template strings
-- Atualização de conteúdo com `textContent`
+- `textContent`
 - Contagem de tentativas
 
 ## 🛠️ Tecnologias
 
-- **HTML5**
-- **CSS3**
-- **JavaScript**
+- HTML5
+- CSS3
+- JavaScript
 
 ## 📁 Estrutura
 
@@ -46,10 +45,10 @@ Adivinhar/
 
 ## ▶️ Executando
 
-Não é necessário instalar nenhuma dependência.
+Não há dependências para instalar.
 
-Basta abrir o arquivo `index.html` em um navegador.
+Abra o arquivo `index.html` em um navegador.
 
----
+## 📄 Licença
 
-Projeto desenvolvido como parte dos estudos de **JavaScript**.
+Este projeto usa a licença MIT do repositório principal.
