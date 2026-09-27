@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.2rem;
+    font-family: monospace, monospace;
+}
+
+body{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    
+    background-image: url(base_background.png);
+    background-size: cover;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+
+
+    flex-direction: column;
+    width: 450px;
+    height: 500px;
+
+
+
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow: 0px .5px 5px 0px black ;
+}
+
+section > *{
+    margin-top: 10px;
+    text-align: center;
+}
+
+section > button {
+    width: 400px;
+    align-self: center;
+    text-align: center;
+    border-radius: 15px;
+    transition: .5s;
+    font-weight: bold;
+    
+}
+
+section > button:hover{
+    scale: 1.1;
+    transition: .5s;
+}
+
+section > input {
+    width: 400px;
+    align-self: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+section > label, section > p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white
+}
+
+section > input, section > button{
+    border: none;
+    outline: none;
+    height: 30px;
+    text-align: center;
+}
+
+
+#calcular{
+    margin-bottom: 30px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    width: 400px;
+    align-self: center;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+}
+
+
+
+
+
+
+
