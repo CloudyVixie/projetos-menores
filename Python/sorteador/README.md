@@ -1,47 +1,31 @@
-# 🎲 Sorteador
+# Sorteador
 
-Um sorteador simples em Python para trabalhar com números, nomes e listas.
+Um programa em Python para fazer sorteios com números, nomes e itens de listas.
 
-## ☁️ Sobre
+## O que dá para sortear
 
-O programa oferece várias formas de fazer sorteios.
+O programa oferece opções de sorteio, incluindo números, nomes e valores dentro de um intervalo. As escolhas aleatórias são feitas com o módulo `random`.
 
-É possível sortear números, nomes, valores de um intervalo ou itens de uma lista.
+## O que pratiquei
 
-O módulo `random` cuida da escolha aleatória.
-
-## 🎯 Possibilidades
-
-- Sorteio de números
-- Sorteio de nomes
-- Sorteio por intervalo
-- Sorteio usando listas
-- Escolha aleatória
-
-## 🧠 Conceitos praticados
-
-- Listas
-- Strings
-- Números
+- Listas e strings
+- Números e intervalos
 - Funções
-- Laços
-- Condições
-- Módulo `random`
+- Laços e condições
 - Entrada de dados
+- Módulo `random`
 
-## ▶️ Execução
+## Como executar
+
+Com Python 3 instalado, rode:
 
 ```bash
 python sorteador.py
 ```
 
-## 🛠️ Tecnologia
+Não é necessário instalar bibliotecas externas.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-O projeto usa recursos da biblioteca padrão.
-
-## 📁 Estrutura
+## Arquivos
 
 ```text
 sorteador/
@@ -49,6 +33,6 @@ sorteador/
 └── README.md
 ```
 
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
