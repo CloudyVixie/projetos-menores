@@ -1,41 +1,33 @@
-# 📊 Calculadora de Probabilidade
+# Calculadora de Probabilidade
 
-Uma calculadora de terminal para estimar tentativas até alcançar uma chance acumulada desejada.
+Uma calculadora de terminal feita em Python para estimar quantas tentativas são necessárias para atingir uma chance acumulada desejada.
 
-## ☁️ Sobre
+## Como funciona
 
-O programa recebe a chance de sucesso de uma tentativa.
+Informe a chance de sucesso em uma tentativa e a chance acumulada que deseja alcançar. O programa calcula o número de tentativas considerando que os eventos são independentes.
 
-Depois, recebe a chance acumulada desejada e calcula quantas tentativas são necessárias.
+O cálculo usa logaritmos para encontrar a quantidade necessária e arredonda o resultado para cima, garantindo um número inteiro de tentativas.
 
-O cálculo considera que cada tentativa é independente.
+## O que pratiquei
 
-## 🧠 Conceitos praticados
+- Variáveis e entrada de dados
+- Validação de valores
+- Condições e laços
+- Tratamento de erros com `try/except`
+- `math.log()` e `math.ceil()`
+- Uso do módulo `os`
 
-- Variáveis
-- Números
-- Entrada de dados
-- Validação
-- Condições
-- Laços
-- `try/except`
-- `math.log()`
-- `math.ceil()`
-- `os`
+## Como executar
 
-## ▶️ Execução
+Com Python 3 instalado, rode:
 
 ```bash
 python CalculadoraProbabilidadeEventosIndependentes.py
 ```
 
-## 🛠️ Tecnologia
-
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
 O projeto usa apenas recursos da biblioteca padrão do Python.
 
-## 📁 Estrutura
+## Arquivos
 
 ```text
 CalculadoraProbabilidadeEventosIndependentes/
@@ -43,6 +35,6 @@ CalculadoraProbabilidadeEventosIndependentes/
 └── README.md
 ```
 
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
