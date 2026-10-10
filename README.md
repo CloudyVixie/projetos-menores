@@ -2,33 +2,17 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111f,45:0b2740,100:123e5a&height=190&section=header&text=projetos-menores&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=experimentos%20%7C%20estudos%20%7C%20pequenas%20ideias&descAlignY=65&descSize=16&animation=fadeIn" width="100%"/>
 </div>
 
-<br>
+# Sobre o repositório
 
-# ☁️ Sobre
+Aqui ficam projetos pequenos que fiz durante os estudos. São exercícios, testes com tecnologias e ferramentas criadas para resolver problemas do dia a dia.
 
-Um espaço para guardar projetos pequenos, exercícios e ideias feitos durante os estudos.
+Cada projeto tem sua própria pasta, com os arquivos separados para facilitar a consulta.
 
-Os projetos vão de programas simples até testes com conceitos novos.
+## Tecnologias que uso
 
-Cada pasta guarda um projeto separado, deixando o código mais fácil de encontrar.
+Python aparece em boa parte dos projetos. Também há trabalhos com JavaScript, HTML e CSS, além de experiências com outras linguagens e banco de dados.
 
----
-
-# 🧰 Tecnologias
-
-<div align="center">
-<img src="https://skillicons.dev/icons?i=python,java,javascript,php,html,css,postgres,mariadb&theme=dark"/>
-</div>
-
-Python é a linguagem mais usada neste repositório.
-
-Java, JavaScript e PHP aparecem conforme novos estudos começam.
-
-Os projetos de banco usam PostgreSQL e MariaDB.
-
----
-
-# 📂 Estrutura
+## Como os arquivos estão organizados
 
 ```text
 projetos-menores/
@@ -38,33 +22,21 @@ projetos-menores/
 └── README.md
 ```
 
-Os projetos ficam separados por linguagem para facilitar a navegação.
+As pastas ajudam a encontrar os projetos de acordo com a linguagem usada.
+
+## Projetos
+
+| Pasta | Conteúdo |
+| --- | --- |
+| `Python` | Exercícios e pequenos programas |
+| `JavaScript` | Projetos web com HTML, CSS e JavaScript |
+
+A lista cresce conforme novos projetos são adicionados.
+
+## Estudos atuais
+
+Python, Java, JavaScript, PHP e SQL.
 
 ---
-
-# 🧩 Projetos
-
-| Pasta | Tecnologia | Conteúdo |
-| --- | --- | --- |
-| Python | Python | Exercícios e pequenos programas |
-| Java | Java | Estudos e testes |
-| JavaScript | HTML, CSS e JavaScript | Pequenos projetos web |
-| Banco de dados | PostgreSQL e MariaDB | Exercícios de SQL |
-
-A lista muda conforme novos projetos entram no repositório.
-
----
-
-# 🌱 Estudos atuais
-
-Python · Java · JavaScript · PHP · SQL
-
-<div align="center">
 
 Feito aos poucos, conforme novas ideias aparecem.
-
-<br>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123e5a,50:0b2740,100:07111f&height=100&section=footer" width="100%"/>
-
-</div>
