@@ -1,56 +1,32 @@
-# 🛒 Lista de Compras — POO
+# Lista de Compras com POO
 
-Uma lista de compras feita para praticar Programação Orientada a Objetos em Python.
+Este programa em Python monta uma lista de compras e serve para praticar Programação Orientada a Objetos.
 
-## ☁️ Sobre
+## Como funciona
 
-O programa cadastra produtos com nome, quantidade e valor.
+Cada item é criado como um objeto da classe `Produto`, que reúne informações como nome, quantidade e valor. Ao final, o programa organiza os dados e salva um arquivo de texto com os produtos e o total da compra.
 
-Cada produto é criado como um objeto da classe `Produto`.
+## O que pratiquei
 
-No fim, os dados são formatados e salvos em um arquivo de texto.
-
-O arquivo também mostra o valor total da lista.
-
-## 🧱 Classe Produto
-
-A classe `Produto` reúne os dados de cada item.
-
-O projeto ajuda a entender como atributos, métodos e objetos funcionam juntos.
-
-## 🧠 Conceitos praticados
-
-- Classes
-- Objetos
-- Atributos
-- Métodos
-- Construtor
+- Classes e objetos
+- Atributos e métodos
+- Construtores
 - Listas de objetos
-- Laços
-- Entrada de dados
-- Arquivos
+- Laços e entrada de dados
 - Cálculos
+- Escrita em arquivos
 
-## 📄 Resultado
+## Como executar
 
-O programa cria um arquivo `.txt` com os produtos e o total da compra.
-
-## ▶️ Execução
+Com Python 3 instalado, rode:
 
 ```bash
 python ListaComprasPOO.py
 ```
 
-## 🛠️ Tecnologia
+O código usa os módulos `time` e `os`, que fazem parte da biblioteca padrão do Python.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-Bibliotecas usadas:
-
-- `time`
-- `os`
-
-## 📁 Estrutura
+## Arquivos
 
 ```text
 ListaComprasPOO/
@@ -58,6 +34,8 @@ ListaComprasPOO/
 └── README.md
 ```
 
-## 📄 Licença
+O programa gera um arquivo `.txt` com os itens e o valor total.
+
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
