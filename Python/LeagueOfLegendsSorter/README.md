@@ -1,44 +1,37 @@
-# 🎮 League of Legends Sorter
+# League of Legends Sorter
 
-Um sorteador de campeões de League of Legends baseado em posições.
+Um sorteador de campeões de League of Legends feito em Python. É possível escolher uma posição ou deixar o programa sortear uma.
 
-## ☁️ Sobre
+## Como funciona
 
-O programa recebe uma posição e sorteia um campeão dela.
+O programa organiza os campeões por posição: Top, Jungle, Mid, ADC e Support. A partir dessa organização, é possível sortear um campeão de uma função específica ou usar todas as posições.
 
-Também permite escolher entre todas as posições ou sortear uma posição.
+## O que dá para fazer
 
-As posições usadas são Top, Jungle, Mid, ADC e Support.
+- Escolher uma posição
+- Sortear um campeão da posição escolhida
+- Sortear uma posição
+- Usar listas separadas por função
 
-## 🎯 Funcionalidades
+## O que pratiquei
 
-- Seleção por posição
-- Sorteio de campeão
-- Sorteio de posição
-- Listas separadas por função
-- Execução pelo terminal
-
-## 🧠 Conceitos praticados
-
-- Listas
-- Dicionários
+- Listas e dicionários
 - Funções
-- Condições
-- Laços
+- Condições e laços
 - Módulo `random`
 - Organização de dados
 
-## ▶️ Execução
+## Como executar
+
+Com Python 3 instalado, rode:
 
 ```bash
 python LeagueOfLegendsSorter.py
 ```
 
-## 🛠️ Tecnologia
+Não é necessário instalar bibliotecas externas.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-## 📁 Estrutura
+## Arquivos
 
 ```text
 LeagueOfLegendsSorter/
@@ -46,6 +39,6 @@ LeagueOfLegendsSorter/
 └── README.md
 ```
 
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
