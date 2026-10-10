@@ -1,76 +1,44 @@
-# 🎯 Sensibility Finder
+# Sensibility Finder
 
-Uma pequena ferramenta web para testar valores de sensibilidade em jogos de mira.
+Uma página simples para calcular variações de sensibilidade em jogos de mira. O projeto usa HTML, CSS e JavaScript e roda direto no navegador.
 
-O projeto foi feito com HTML, CSS e JavaScript.
+## Por que fiz esse projeto
 
-## ☁️ Sobre
+Antes, eu fazia esse tipo de cálculo com pequenos scripts em Python. A ideia foi transformar o cálculo em uma página que desse para usar sem abrir um programa separado.
 
-Antes deste projeto, cálculos desse tipo eram feitos em pequenos scripts Python.
+## Como funciona
 
-A ideia foi levar o mesmo cálculo para uma página web simples e interativa.
-
-A ferramenta recebe uma sensibilidade base e cria três valores:
+Informe a sensibilidade base e clique em **Calcular**. A página mostra três opções:
 
 | Opção | Cálculo | Resultado |
 | --- | --- | --- |
-| Baixa | Base × 0.5 | 50% da base |
-| Atual | Base | 100% da base |
-| Alta | Base × 1.5 | 150% da base |
+| Baixa | Base × 0,5 | Metade do valor inicial |
+| Atual | Base | O próprio valor inicial |
+| Alta | Base × 1,5 | Uma vez e meia o valor inicial |
 
-Também é possível colocar um dos valores direto no campo de sensibilidade.
+Os botões permitem colocar a opção baixa ou alta diretamente no campo, para testar outro valor sem digitá-lo manualmente.
 
-## 🧠 Como funciona
+Todo o cálculo acontece no navegador. Não há servidor nem banco de dados.
 
-1. Informe a sensibilidade base.
-2. Clique em **Calcular**.
-3. A página calcula os três valores.
-4. Os resultados aparecem na tela.
-5. Use os botões para testar uma das opções.
+## Como executar
 
-Tudo roda no navegador, sem servidor ou banco de dados.
+Não é preciso instalar dependências. Abra o arquivo `index.html` em um navegador moderno.
 
-## 🖥️ Interface
+## Como o código está organizado
 
-A página usa uma imagem de fundo com efeitos feitos em CSS.
+- `index.html`: contém o campo de entrada, o botão de cálculo e os espaços para mostrar os resultados.
+- `script.js`: calcula as variações e atualiza os elementos da página.
+- `style.css`: organiza a interface, o fundo e os efeitos dos botões.
+- `base_background.png`: imagem usada no fundo da página.
 
-Os botões também usam transições e efeito de escala ao passar o mouse.
-
-## 🛠️ Tecnologias
-
-| Tecnologia | Uso |
-| --- | --- |
-| HTML5 | Estrutura da página |
-| CSS3 | Layout e efeitos |
-| JavaScript | Cálculos e eventos |
-
-## 📂 Estrutura
-
-```text
-SensibilityFinder/
-├── index.html
-├── script.js
-├── style.css
-├── base_background.png
-└── README.md
-```
-
-## 🎓 Conceitos praticados
+## O que pratiquei
 
 - Manipulação do DOM
-- Eventos
-- Inputs
+- Eventos de clique
+- Leitura de valores de um campo
 - Cálculos com JavaScript
-- Flexbox
-- Efeitos de CSS
-- Atualização de conteúdo
+- Flexbox e efeitos de CSS
 
-## ▶️ Executando
-
-Não é preciso instalar nada.
-
-Abra `index.html` em um navegador moderno.
-
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
