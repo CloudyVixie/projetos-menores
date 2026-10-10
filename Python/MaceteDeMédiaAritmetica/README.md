@@ -1,66 +1,69 @@
 # Macete de Média Aritmética
 
-Projeto em Python para testar um método alternativo de calcular a média aritmética usando desvios em relação a um valor hipotético.
+Este projeto foi feito em Python para testar um jeito diferente de calcular a média. Em vez de somar todos os valores diretamente, o cálculo usa as diferenças entre cada número e um valor de referência.
 
-## Como funciona?
+## Como o cálculo funciona
 
-A ideia é escolher um número próximo da média esperada e calcular a diferença entre esse valor e cada elemento da lista. Depois, basta calcular a média dos desvios e somar o resultado ao número escolhido.
+Primeiro, escolhe-se um valor próximo da média esperada. Depois, calcula-se a diferença entre esse valor e cada número da lista. A média dessas diferenças é somada ao valor escolhido.
 
-Esse método pode facilitar cálculos com muitos valores, reduzindo a necessidade de somar todos os números diretamente.
+### Exemplo
 
-### Exemplo prático
-
-Considere a seguinte lista:
+Considere esta lista:
 
 ```python
 [8.5, 7.3, 7.0, 7.5, 9.2, 8.4, 9.0, 7.2, 8.0, 9.5]
 ```
 
-**1. Escolha um valor hipotético**
+**1. Escolha um valor de referência**
 
 Neste exemplo, o valor escolhido é `7.3`.
 
-**2. Calcule os desvios**
+**2. Calcule as diferenças**
 
-Subtraia `7.3` de cada elemento da lista:
+Subtraia `7.3` de cada número:
 
 ```text
  1.2,  0.0, -0.3,  0.2,  1.9,
  1.1,  1.7, -0.1,  0.7,  2.2
 ```
 
-Valores acima de `7.3` geram desvios positivos. Valores abaixo geram desvios negativos.
+Os números acima de `7.3` geram diferenças positivas. Os que ficam abaixo geram diferenças negativas.
 
-**3. Calcule a média dos desvios**
+**3. Calcule a média das diferenças**
 
-A soma dos desvios é `8.6`. Como existem 10 valores:
+A soma das diferenças é `8.6`. Como a lista tem 10 números:
 
 ```text
 8.6 / 10 = 0.86
 ```
 
-**4. Encontre a média aritmética**
+**4. Encontre a média**
 
-Some a média dos desvios ao valor hipotético:
+Some o resultado ao valor de referência:
 
 ```text
 7.3 + 0.86 = 8.16
 ```
 
-O resultado é **8,16**, a mesma média obtida pelo cálculo tradicional.
+A média da lista é **8,16**, igual ao resultado do cálculo tradicional.
 
-## Objetivo
+## Por que fiz esse projeto
 
-- Praticar conceitos de matemática com Python.
-- Compreender uma alternativa ao cálculo tradicional da média.
-- Verificar o resultado do método por meio de um exemplo.
-- Explorar formas de simplificar cálculos matemáticos.
+A ideia foi testar um método que conheci em um vídeo e conferir se o resultado batia com a média comum. Também serviu para praticar cálculos e listas em Python.
 
 ## Referência
 
-O método foi conhecido por meio de um vídeo no TikTok, utilizado como referência para testar o cálculo.
+Usei este vídeo como referência para testar o método:
 
-[Assistir ao vídeo utilizado como referência](https://vt.tiktok.com/ZSbsScYFo/)
+[Assistir ao vídeo no TikTok](https://vt.tiktok.com/ZSbsScYFo/)
+
+## Como executar
+
+É necessário ter Python 3 instalado. Execute o arquivo do projeto pelo terminal:
+
+```bash
+python MaceteDeMédiaAritmetica.py
+```
 
 ## Tecnologias
 
@@ -68,4 +71,4 @@ O método foi conhecido por meio de um vídeo no TikTok, utilizado como referên
 
 ## Licença
 
-Este projeto está disponibilizado sob a licença MIT. Consulte o arquivo `LICENSE` do repositório para conhecer os termos de uso.
+Este projeto está disponível sob a licença MIT. Consulte o arquivo `LICENSE` do repositório para ver os termos.
