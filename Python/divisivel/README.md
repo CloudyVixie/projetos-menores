@@ -1,49 +1,39 @@
-# ➗ Divisível
+# Divisível
 
-Um programa simples para encontrar os divisores de um número inteiro positivo.
+Este programa em Python recebe um número inteiro positivo e mostra seus divisores.
 
-## ☁️ Sobre
+## Como funciona
 
-O usuário informa um número.
+O código testa os números de 1 até o valor informado. Quando a divisão não deixa resto, o número testado é um divisor e entra na lista de resultados.
 
-O programa testa valores entre 1 e o próprio número.
-
-Quando a divisão não deixa resto, o valor entra na lista de divisores.
-
-## 🔎 Como funciona
-
-O código usa o operador módulo:
+A verificação usa o operador módulo (`%`):
 
 ```python
 numero % divisor
 ```
 
-Quando o resultado é `0`, a divisão é exata.
+Se o resultado for `0`, a divisão é exata.
 
-## 🧠 Conceitos praticados
+## O que pratiquei
 
-- `input()`
-- `int`
+- Entrada e conversão de dados
 - Laço `for`
 - Condições
-- Operador módulo `%`
+- Operador módulo
 - Listas
-- Validação
-- `ValueError`
+- Tratamento de `ValueError`
 
-## ▶️ Execução
+## Como executar
+
+Com Python 3 instalado, rode:
 
 ```bash
 python divisivel.py
 ```
 
-## 🛠️ Tecnologia
+O projeto usa apenas recursos da biblioteca padrão do Python.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-O projeto usa apenas recursos da biblioteca padrão.
-
-## 📁 Estrutura
+## Arquivos
 
 ```text
 divisivel/
@@ -51,6 +41,6 @@ divisivel/
 └── README.md
 ```
 
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
