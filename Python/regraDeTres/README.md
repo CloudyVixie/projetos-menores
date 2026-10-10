@@ -1,47 +1,38 @@
-# 📐 Regra de Três
+# Regra de Três
 
-Uma calculadora simples para resolver regras de três usando Python.
+Uma calculadora em Python para resolver problemas de regra de três a partir de três valores conhecidos.
 
-## ☁️ Sobre
+## Como funciona
 
-O programa recebe três valores de uma proporção.
+O programa recebe os valores de uma proporção e calcula o que falta. Também permite escolher qual parte da relação será calculada.
 
-Depois, calcula o valor que falta na relação.
-
-Também permite escolher qual parte da relação deve ser calculada.
-
-## 🧮 Exemplo
+Uma proporção pode ser representada assim:
 
 ```text
 a / b = c / x
 ```
 
-A relação pode ser resolvida usando multiplicação cruzada.
+O cálculo usa a multiplicação cruzada para encontrar o valor desconhecido.
 
-## 🧠 Conceitos praticados
+## O que pratiquei
 
-- Funções
-- Parâmetros
-- Retornos
+- Funções, parâmetros e retornos
 - Operações matemáticas
-- Condições
-- Laços
+- Condições e laços
 - Entrada de dados
 - Tratamento de erros
 
-## ▶️ Execução
+## Como executar
+
+Com Python 3 instalado, rode:
 
 ```bash
 python regraDeTres.py
 ```
 
-## 🛠️ Tecnologia
+O projeto usa recursos da biblioteca padrão do Python.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-O projeto usa recursos da biblioteca padrão.
-
-## 📁 Estrutura
+## Arquivos
 
 ```text
 regraDeTres/
@@ -49,6 +40,6 @@ regraDeTres/
 └── README.md
 ```
 
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
