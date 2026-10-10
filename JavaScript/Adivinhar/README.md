@@ -1,39 +1,29 @@
-# 🎯 Adivinhar
+# Adivinhar
 
-Um pequeno jogo feito com HTML, CSS e JavaScript para praticar lógica no navegador.
+Um jogo simples de navegador feito com HTML, CSS e JavaScript. A ideia é descobrir o número escolhido e acompanhar as tentativas.
 
-## 🕹️ Como funciona
+## Como funciona
 
-O jogo escolhe um número entre 0 e 100.
+O jogo trabalha com um número entre 0 e 100. A cada palpite, a página informa se o valor escolhido ficou acima ou abaixo do número secreto e conta as tentativas realizadas.
 
-A pessoa informa um palpite e recebe uma dica sobre o valor escolhido.
+No código atual, o número definido é `43`.
 
-O jogo mostra quando o palpite está acima ou abaixo do número.
+## O que pratiquei
 
-Também conta quantas tentativas foram feitas.
-
-O número usado no código atual é **43**.
-
-## 🧠 Conceitos praticados
-
-- DOM
-- `document.getElementById()`
-- Eventos com `onclick`
-- `let` e `const`
-- `if` e `else if`
-- Operadores de comparação
-- Operador lógico `||`
+- Manipulação do DOM
+- Eventos de clique
+- Variáveis com `let` e `const`
+- Condições com `if` e `else if`
+- Operadores de comparação e lógicos
 - Template strings
-- `textContent`
+- Atualização de texto com `textContent`
 - Contagem de tentativas
 
-## 🛠️ Tecnologias
+## Como executar
 
-- HTML5
-- CSS3
-- JavaScript
+Não há dependências para instalar. Abra o arquivo `index.html` em um navegador.
 
-## 📁 Estrutura
+## Arquivos
 
 ```text
 Adivinhar/
@@ -43,12 +33,6 @@ Adivinhar/
 └── README.md
 ```
 
-## ▶️ Executando
-
-Não há dependências para instalar.
-
-Abra o arquivo `index.html` em um navegador.
-
-## 📄 Licença
+## Licença
 
 Este projeto usa a licença MIT do repositório principal.
