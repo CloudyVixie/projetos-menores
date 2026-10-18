@@ -1,34 +1,4 @@
-
-const API = 'http://localhost:3000';
-
-const autenticacao = document.getElementById('autenticacao');
-const aplicacao = document.getElementById('aplicacao');
-const mensagemAuth = document.getElementById('mensagemAuth');
-const mensagemCalculo = document.getElementById('mensagemCalculo');
-
-let usuario = null;
-
-try {
-    usuario = JSON.parse(localStorage.getItem('usuario'));
-} catch {
-    localStorage.removeItem('usuario');
-}
-
-function mostrarAplicacao() {
-    autenticacao.hidden = true;
-    aplicacao.hidden = false;
-    document.getElementById('boasVindas').textContent =
-        `Olá, ${usuario.nome}!`;
-
-    carregarHistorico();
-}
-
-function mostrarAutenticacao() {
-    usuario = null;
-    localStorage.removeItem('usuario');
-    autenticacao.hidden = false;
-    aplicacao.hidden = true;
-}
+const API = '';
 
 async function enviarDados(url, dados) {
     const resposta = await fetch(`${API}${url}`, {
@@ -37,151 +7,167 @@ async function enviarDados(url, dados) {
         body: JSON.stringify(dados)
     });
 
-    const resultado = await resposta.json();
+    let resultado = {};
+    try {
+        resultado = await resposta.json();
+    } catch {
+        throw new Error('O servidor retornou uma resposta inválida.');
+    }
 
     if (!resposta.ok) {
-        throw new Error(resultado.erro || 'Ocorreu um erro.');
+        throw new Error(resultado.erro || 'Ocorreu um erro na solicitação.');
     }
 
     return resultado;
 }
 
 // Cadastro
-document.getElementById('formCadastro').addEventListener('submit', async (evento) => {
-    evento.preventDefault();
+const formCadastro = document.getElementById('formCadastro');
 
-    const nome = document.getElementById('nomeCadastro').value.trim();
-    const senha = document.getElementById('senhaCadastro').value;
+if (formCadastro) {
+    formCadastro.addEventListener('submit', async (evento) => {
+        evento.preventDefault();
 
-    try {
-        const resultado = await enviarDados('/usuarios', { nome, senha });
-        mensagemAuth.textContent = resultado.mensagem;
-        document.getElementById('formCadastro').reset();
-    } catch (erro) {
-        mensagemAuth.textContent = erro.message;
-    }
-});
+        const nome = document.getElementById('cadastroNome').value.trim();
+        const senha = document.getElementById('cadastroSenha').value;
+        const mensagem = document.getElementById('mensagemCadastro');
+
+        mensagem.textContent = 'Cadastrando...';
+
+        try {
+            await enviarDados('/usuarios', { nome, senha });
+            mensagem.textContent = 'Cadastro realizado! Você será redirecionado para o login.';
+            formCadastro.reset();
+
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 900);
+        } catch (erro) {
+            mensagem.textContent = erro.message;
+        }
+    });
+}
 
 // Login
-document.getElementById('formLogin').addEventListener('submit', async (evento) => {
-    evento.preventDefault();
+const formLogin = document.getElementById('formLogin');
 
-    const nome = document.getElementById('nomeLogin').value.trim();
-    const senha = document.getElementById('senhaLogin').value;
+if (formLogin) {
+    formLogin.addEventListener('submit', async (evento) => {
+        evento.preventDefault();
 
-    try {
-        const resultado = await enviarDados('/login', { nome, senha });
+        const nome = document.getElementById('loginNome').value.trim();
+        const senha = document.getElementById('loginSenha').value;
+        const mensagem = document.getElementById('mensagemLogin');
 
-        usuario = resultado.usuario;
-        localStorage.setItem('usuario', JSON.stringify(usuario));
+        mensagem.textContent = 'Entrando...';
 
-        mensagemAuth.textContent = '';
-        document.getElementById('formLogin').reset();
-        mostrarAplicacao();
-    } catch (erro) {
-        mensagemAuth.textContent = erro.message;
-    }
-});
-
-// Sair
-document.getElementById('sair').addEventListener('click', () => {
-    mostrarAutenticacao();
-});
-
-// Cálculo
-const campoSensi = document.getElementById('sensi_base');
-const sensiBaixa = document.getElementById('sensi_baixa');
-const sensiAtual = document.getElementById('sensi_atual');
-const sensiAlta = document.getElementById('sensi_alta');
-const botaoBaixa = document.getElementById('usar_sensi_baixa');
-const botaoAlta = document.getElementById('usar_sensi_alta');
-const divisores = document.querySelectorAll('.divisor');
-
-async function calcular(salvar = false) {
-    const valor = campoSensi.value.trim();
-    const sensibilidade = Number(valor);
-
-    if (valor === '' || !Number.isFinite(sensibilidade) || sensibilidade <= 0) {
-        mensagemCalculo.textContent = 'Digite uma sensibilidade maior que zero.';
-        return;
-    }
-
-    sensiBaixa.textContent = `Diminua sua sensibilidade para ${sensibilidade * 0.5}`;
-    sensiAtual.textContent = `Sua sensibilidade atual é ${sensibilidade}`;
-    sensiAlta.textContent = `Aumente sua sensibilidade para ${sensibilidade * 1.5}`;
-
-    botaoBaixa.hidden = false;
-    botaoAlta.hidden = false;
-    divisores.forEach(elemento => elemento.style.display = 'block');
-
-    mensagemCalculo.textContent = '';
-
-    if (salvar && usuario) {
         try {
-            await enviarDados('/historico', {
-                id_usuario: usuario.id,
-                sensibilidade
-            });
+            const resultado = await enviarDados('/login', { nome, senha });
 
-            await carregarHistorico();
-            mensagemCalculo.textContent = 'Cálculo salvo no histórico.';
+            localStorage.setItem('usuario', JSON.stringify(resultado.usuario));
+            window.location.href = 'index.html';
         } catch (erro) {
-            mensagemCalculo.textContent = erro.message;
+            mensagem.textContent = erro.message;
         }
-    }
+    });
 }
 
-document.getElementById('calcular').addEventListener('click', () => {
-    calcular(true);
-});
+// Calculadora e histórico
+const formSensibilidade = document.getElementById('formSensibilidade');
 
-botaoBaixa.addEventListener('click', () => {
-    campoSensi.value = Number(campoSensi.value) * 0.5;
-    calcular(true);
-});
-
-botaoAlta.addEventListener('click', () => {
-    campoSensi.value = Number(campoSensi.value) * 1.5;
-    calcular(true);
-});
-
-// Histórico
-async function carregarHistorico() {
-    if (!usuario) return;
-
-    const lista = document.getElementById('listaHistorico');
-    lista.replaceChildren();
+if (formSensibilidade) {
+    let usuario = null;
 
     try {
-        const resposta = await fetch(
-            `${API}/historico/${encodeURIComponent(usuario.id)}`
-        );
-
-        if (!resposta.ok) {
-            throw new Error('Não foi possível carregar o histórico.');
-        }
-
-        const registros = await resposta.json();
-
-        if (registros.length === 0) {
-            lista.textContent = 'Nenhum cálculo salvo ainda.';
-            return;
-        }
-
-        registros.forEach(registro => {
-            const item = document.createElement('li');
-            item.textContent =
-                `Registro ${registro.registro}: ${registro.sensibilidade}`;
-            lista.appendChild(item);
-        });
-    } catch (erro) {
-        lista.textContent = erro.message;
+        usuario = JSON.parse(localStorage.getItem('usuario'));
+    } catch {
+        localStorage.removeItem('usuario');
     }
-}
 
-// Inicialização
-if (usuario && Number.isInteger(usuario.id) && usuario.id > 0) {
-    mostrarAplicacao();
-} else {
-    mostrarAutenticacao();
+    if (!usuario || !Number.isInteger(usuario.id) || usuario.id <= 0) {
+        window.location.replace('login.html');
+    } else {
+        document.getElementById('nomeUsuario').textContent = usuario.nome;
+
+        const campoSensi = document.getElementById('sensibilidade');
+        const resultado = document.getElementById('resultado');
+        const listaHistorico = document.getElementById('listaHistorico');
+
+        async function carregarHistorico() {
+            listaHistorico.replaceChildren();
+
+            try {
+                const resposta = await fetch(`/historico/${encodeURIComponent(usuario.id)}`);
+                if (!resposta.ok) {
+                    throw new Error('Não foi possível carregar o histórico.');
+                }
+
+                const registros = await resposta.json();
+
+                if (registros.length === 0) {
+                    const item = document.createElement('li');
+                    item.textContent = 'Nenhum cálculo salvo ainda.';
+                    listaHistorico.appendChild(item);
+                    return;
+                }
+
+                registros.forEach((registro) => {
+                    const item = document.createElement('li');
+                    item.textContent = `Sensibilidade: ${registro.sensibilidade}`;
+                    listaHistorico.appendChild(item);
+                });
+            } catch (erro) {
+                const item = document.createElement('li');
+                item.textContent = erro.message;
+                listaHistorico.appendChild(item);
+            }
+        }
+
+        formSensibilidade.addEventListener('submit', async (evento) => {
+            evento.preventDefault();
+
+            const valor = campoSensi.value.trim();
+            const sensibilidade = Number(valor);
+
+            if (valor === '' || !Number.isFinite(sensibilidade) || sensibilidade <= 0) {
+                resultado.textContent = 'Digite uma sensibilidade maior que zero.';
+                return;
+            }
+
+            const baixa = sensibilidade * 0.5;
+            const alta = sensibilidade * 1.5;
+
+            resultado.replaceChildren();
+
+            const atual = document.createElement('p');
+            atual.textContent = `Sensibilidade atual: ${sensibilidade}`;
+
+            const valorBaixo = document.createElement('p');
+            valorBaixo.textContent = `Sensibilidade 50% menor: ${baixa}`;
+
+            const valorAlto = document.createElement('p');
+            valorAlto.textContent = `Sensibilidade 50% maior: ${alta}`;
+
+            resultado.append(atual, valorBaixo, valorAlto);
+
+            try {
+                await enviarDados('/historico', {
+                    id_usuario: usuario.id,
+                    sensibilidade
+                });
+                await carregarHistorico();
+            } catch (erro) {
+                const aviso = document.createElement('p');
+                aviso.textContent = erro.message;
+                resultado.appendChild(aviso);
+            }
+        });
+
+        document.getElementById('sair').addEventListener('click', () => {
+            localStorage.removeItem('usuario');
+            window.location.href = 'login.html';
+        });
+
+        carregarHistorico();
+    }
 }
