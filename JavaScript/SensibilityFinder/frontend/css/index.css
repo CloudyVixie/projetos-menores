@@ -7,7 +7,7 @@
 :root {
     color-scheme: dark;
     --fundo: #080d18;
-    --cartao: #101a2b;
+    --cartao: rgba(16, 26, 43, 0.96);
     --azul: #4b8dff;
     --texto: #f1f5ff;
     --texto-secundario: #9baac2;
@@ -20,36 +20,39 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     color: var(--texto);
     background:
-        linear-gradient(rgba(5, 10, 22, 0.86), rgba(5, 10, 22, 0.96)),
+        linear-gradient(rgba(5, 10, 22, 0.82), rgba(5, 10, 22, 0.94)),
         url("../resources/base_background.png") center / cover fixed,
         var(--fundo);
 }
 
 main {
     width: 100%;
-    max-width: 760px;
+    max-width: 780px;
     margin: 0 auto;
-    padding: 36px;
-    background: rgba(16, 26, 43, 0.95);
-    border: 1px solid var(--borda);
-    border-radius: 18px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
 h1 {
-    margin-bottom: 12px;
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 5vw, 2.7rem);
     letter-spacing: -1px;
 }
 
 h2 {
-    margin: 32px 0 16px;
+    margin-bottom: 12px;
     font-size: 1.3rem;
 }
 
-main > p {
-    margin: 12px 0;
+p {
+    margin-top: 10px;
     color: var(--texto-secundario);
+    line-height: 1.6;
 }
 
 #nomeUsuario {
@@ -57,11 +60,20 @@ main > p {
     font-weight: 700;
 }
 
+.painel {
+    margin-top: 20px;
+    padding: 30px;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
 form {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 26px;
+    margin-top: 24px;
 }
 
 label {
@@ -87,7 +99,6 @@ input:focus {
 
 button {
     padding: 13px 18px;
-    margin-top: 6px;
     color: white;
     background: var(--azul);
     border: none;
@@ -103,51 +114,59 @@ button:hover {
     transform: translateY(-1px);
 }
 
+.botao-secundario {
+    background: #351b29;
+    border: 1px solid #693047;
+    color: #ffb1b1;
+}
+
+.botao-secundario:hover {
+    background: #542337;
+}
+
 #resultado {
+    display: grid;
+    gap: 10px;
     margin-top: 20px;
-    padding: 16px;
+}
+
+#resultado p,
+#listaHistorico li {
+    padding: 14px 16px;
+    margin: 0;
     background: #0a1220;
     border: 1px solid var(--borda);
     border-radius: 8px;
-    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#resultado p:first-child {
+    border-color: #3e6fba;
+    color: var(--texto);
 }
 
 #listaHistorico {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 18px;
     list-style: none;
 }
 
 #listaHistorico li {
-    padding: 14px 16px;
-    background: #0a1220;
-    border: 1px solid var(--borda);
-    border-radius: 8px;
     color: var(--texto-secundario);
-}
-
-#sair {
-    margin-top: 28px;
-    color: #ffb1b1;
-    background: #351b29;
-    border: 1px solid #693047;
-}
-
-#sair:hover {
-    background: #542337;
 }
 
 @media (max-width: 600px) {
     body {
-        padding: 20px 12px;
+        padding: 24px 14px;
     }
 
-    main {
-        padding: 24px 18px;
+    .topo {
+        align-items: flex-start;
     }
 
-    h1 {
-        font-size: 1.8rem;
+    .painel {
+        padding: 22px 18px;
     }
 }
