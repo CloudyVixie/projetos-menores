@@ -123,7 +123,9 @@ if (formSensibilidade) {
             }
         }
 
-        formSensibilidade.addEventListener('submit', async (evento) => {
+        let sensibilidadeCalculada = [];
+
+        formSensibilidade.addEventListener('submit', (evento) => {
             evento.preventDefault();
 
             const valor = campoSensi.value.trim();
@@ -134,33 +136,63 @@ if (formSensibilidade) {
                 return;
             }
 
-            const baixa = sensibilidade * 0.5;
-            const alta = sensibilidade * 1.5;
+            sensibilidadeCalculada = [
+                sensibilidade * 0.5,
+                sensibilidade,
+                sensibilidade * 1.5
+            ];
 
             resultado.replaceChildren();
 
-            const atual = document.createElement('p');
-            atual.textContent = `Sensibilidade atual: ${sensibilidade}`;
+            sensibilidadeCalculada.forEach((numero, indice) => {
+                const opcao = document.createElement('label');
+                opcao.className = 'opcao-sensibilidade';
 
-            const valorBaixo = document.createElement('p');
-            valorBaixo.textContent = `Sensibilidade 50% menor: ${baixa}`;
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'sensibilidadeSelecionada';
+                radio.value = String(indice);
+                radio.checked = indice === 1;
 
-            const valorAlto = document.createElement('p');
-            valorAlto.textContent = `Sensibilidade 50% maior: ${alta}`;
+                const valorNumero = document.createElement('span');
+                valorNumero.textContent = String(Number(numero.toPrecision(10)));
 
-            resultado.append(atual, valorBaixo, valorAlto);
+                opcao.append(radio, valorNumero);
+                resultado.appendChild(opcao);
+            });
 
-            try {
-                await enviarDados('/historico', {
-                    id_usuario: usuario.id,
-                    sensibilidade
-                });
-                await carregarHistorico();
-            } catch (erro) {
-                const aviso = document.createElement('p');
-                aviso.textContent = erro.message;
-                resultado.appendChild(aviso);
-            }
+            const botaoSalvar = document.createElement('button');
+            botaoSalvar.type = 'button';
+            botaoSalvar.id = 'salvarSensibilidade';
+            botaoSalvar.textContent = 'Salvar selecionada';
+            resultado.appendChild(botaoSalvar);
+
+            botaoSalvar.addEventListener('click', async () => {
+                const selecionada = resultado.querySelector('input[name="sensibilidadeSelecionada"]:checked');
+
+                if (!selecionada) {
+                    return;
+                }
+
+                botaoSalvar.disabled = true;
+                botaoSalvar.textContent = 'Salvando...';
+
+                try {
+                    const sensibilidadeEscolhida = Number(sensibilidadeCalculada[Number(selecionada.value)]);
+                    await enviarDados('/historico', {
+                        id_usuario: usuario.id,
+                        sensibilidade: Number(sensibilidadeEscolhida.toPrecision(10))
+                    });
+                    await carregarHistorico();
+                    botaoSalvar.textContent = 'Salva!';
+                } catch (erro) {
+                    botaoSalvar.disabled = false;
+                    botaoSalvar.textContent = 'Salvar selecionada';
+                    const aviso = document.createElement('p');
+                    aviso.textContent = erro.message;
+                    resultado.appendChild(aviso);
+                }
+            });
         });
 
         document.getElementById('sair').addEventListener('click', () => {
