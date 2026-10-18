@@ -1,1 +1,5 @@
-node backend/api/server.js
+bat
+@echo off
+cd /d "%~dp0"
+npm start
+pause
