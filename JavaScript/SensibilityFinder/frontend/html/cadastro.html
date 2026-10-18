@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | SensiFinder</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 <body>
     <main>
         <h1>Criar conta</h1>
+        <p>Cadastre-se para salvar seu histórico de sensibilidades.</p>
 
         <form id="formCadastro">
             <label for="cadastroNome">Nome de usuário</label>
-            <input type="text" id="cadastroNome" required>
+            <input type="text" id="cadastroNome" autocomplete="username" maxlength="100" required>
 
             <label for="cadastroSenha">Senha</label>
-            <input type="password" id="cadastroSenha" required>
+            <input type="password" id="cadastroSenha" autocomplete="new-password" required>
 
             <button type="submit">Cadastrar</button>
         </form>
 
-        <p id="mensagemCadastro"></p>
+        <p id="mensagemCadastro" role="status" aria-live="polite"></p>
 
-        <p>Já tem uma conta?</p>
-        <a href="index.html">Fazer login</a>
+        <p class="link-text">Já tem uma conta?</p>
+        <a href="login.html">Fazer login</a>
     </main>
 
     <script src="../script.js"></script>
