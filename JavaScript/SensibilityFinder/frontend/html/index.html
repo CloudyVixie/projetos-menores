@@ -8,29 +8,39 @@
 </head>
 <body>
     <main>
-        <h1>SensiFinder</h1>
+        <header class="topo">
+            <div>
+                <h1>SensiFinder</h1>
+                <p>Olá, <span id="nomeUsuario"></span>!</p>
+            </div>
+            <button type="button" id="sair" class="botao-secundario">Sair</button>
+        </header>
 
-        <p>Olá, <span id="nomeUsuario"></span>!</p>
+        <section class="painel">
+            <h2>Calculadora de sensibilidade</h2>
+            <p>Informe sua sensibilidade atual para comparar valores 50% menores e maiores.</p>
 
-        <form id="formSensibilidade">
-            <label for="sensibilidade">Sua sensibilidade</label>
-            <input
-                type="number"
-                id="sensibilidade"
-                min="0.01"
-                step="any"
-                required
-            >
+            <form id="formSensibilidade">
+                <label for="sensibilidade">Sensibilidade atual</label>
+                <input
+                    type="number"
+                    id="sensibilidade"
+                    min="0.01"
+                    step="any"
+                    inputmode="decimal"
+                    placeholder="Ex.: 5.5"
+                    required
+                >
+                <button type="submit">Calcular e salvar</button>
+            </form>
 
-            <button type="submit">Calcular</button>
-        </form>
+            <div id="resultado" aria-live="polite"></div>
+        </section>
 
-        <p id="resultado"></p>
-
-        <h2>Histórico</h2>
-        <ul id="listaHistorico"></ul>
-
-        <button type="button" id="sair">Sair</button>
+        <section class="painel">
+            <h2>Histórico</h2>
+            <ul id="listaHistorico"></ul>
+        </section>
     </main>
 
     <script src="../script.js"></script>
