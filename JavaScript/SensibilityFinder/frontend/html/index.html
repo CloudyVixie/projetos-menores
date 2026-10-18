@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora | SensiFinder</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <main>
+        <h1>SensiFinder</h1>
+
+        <p>Olá, <span id="nomeUsuario"></span>!</p>
+
+        <form id="formSensibilidade">
+            <label for="sensibilidade">Sua sensibilidade</label>
+            <input
+                type="number"
+                id="sensibilidade"
+                min="0.01"
+                step="any"
+                required
+            >
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <p id="resultado"></p>
+
+        <h2>Histórico</h2>
+        <ul id="listaHistorico"></ul>
+
+        <button type="button" id="sair">Sair</button>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>

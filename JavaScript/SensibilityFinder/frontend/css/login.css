@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: dark;
+    --fundo: #080d18;
+    --cartao: #101a2b;
+    --azul: #4b8dff;
+    --texto: #f1f5ff;
+    --texto-secundario: #9baac2;
+    --borda: #263650;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+    background:
+        linear-gradient(rgba(5, 10, 22, 0.82), rgba(5, 10, 22, 0.94)),
+        url("../resources/base_background.png") center / cover fixed,
+        var(--fundo);
+}
+
+main {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    background: rgba(16, 26, 43, 0.94);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    letter-spacing: -1px;
+}
+
+main > p:first-of-type {
+    color: var(--texto-secundario);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 13px 14px;
+    color: var(--texto);
+    background: #0a1220;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(75, 141, 255, 0.15);
+}
+
+button {
+    padding: 13px;
+    margin-top: 8px;
+    color: white;
+    background: var(--azul);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #3275e8;
+    transform: translateY(-1px);
+}
+
+#mensagemLogin {
+    margin-top: 16px;
+    font-size: 0.9rem;
+}
+
+main > p:not(:first-of-type) {
+    margin-top: 24px;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    color: #78aaff;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 28px 22px;
+    }
+}
