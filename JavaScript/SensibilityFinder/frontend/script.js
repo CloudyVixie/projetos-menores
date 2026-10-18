@@ -164,7 +164,7 @@ if (formSensibilidade) {
             const botaoSalvar = document.createElement('button');
             botaoSalvar.type = 'button';
             botaoSalvar.id = 'salvarSensibilidade';
-            botaoSalvar.textContent = 'Salvar selecionada';
+            botaoSalvar.textContent = 'Salvar';
             resultado.appendChild(botaoSalvar);
 
             botaoSalvar.addEventListener('click', async () => {
@@ -179,12 +179,14 @@ if (formSensibilidade) {
 
                 try {
                     const sensibilidadeEscolhida = Number(sensibilidadeCalculada[Number(selecionada.value)]);
+                    const valorSalvo = Number(sensibilidadeEscolhida.toPrecision(10));
                     await enviarDados('/historico', {
                         id_usuario: usuario.id,
-                        sensibilidade: Number(sensibilidadeEscolhida.toPrecision(10))
+                        sensibilidade: valorSalvo
                     });
+                    campoSensi.value = String(valorSalvo);
                     await carregarHistorico();
-                    botaoSalvar.textContent = 'Salva!';
+                    botaoSalvar.textContent = 'Salvo';
                 } catch (erro) {
                     botaoSalvar.disabled = false;
                     botaoSalvar.textContent = 'Salvar selecionada';
