@@ -170,3 +170,35 @@ button:hover {
         padding: 22px 18px;
     }
 }
+
+.opcao-sensibilidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin: 0;
+    color: var(--texto);
+    background: #0a1220;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.opcao-sensibilidade:has(input:checked) {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 2px rgba(75, 141, 255, 0.12);
+}
+
+.opcao-sensibilidade input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--azul);
+    box-shadow: none;
+}
+
+#salvarSensibilidade:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
