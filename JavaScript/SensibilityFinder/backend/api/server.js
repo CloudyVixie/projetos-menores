@@ -1,16 +1,21 @@
-
 const express = require('express');
-const cors = require('cors');
+const path = require('path');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+const caminhoFrontend = path.join(__dirname, '..', '..', 'frontend');
 
-app.use(cors());
 app.use(express.json());
+app.use(express.static(caminhoFrontend));
 
 app.use('/usuarios', require('./cadastrar'));
 app.use('/login', require('./login'));
 app.use('/historico', require('./historico'));
 
-app.listen(3000, () => {
-    console.log('API disponível em http://localhost:3000');
+app.get('/', (req, res) => {
+    res.redirect('/html/login.html');
+});
+
+app.listen(PORT, () => {
+    console.log(`SensiFinder disponível em http://localhost:${PORT}`);
 });
