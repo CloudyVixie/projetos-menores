@@ -189,7 +189,7 @@ if (formSensibilidade) {
                     botaoSalvar.textContent = 'Salvo';
                 } catch (erro) {
                     botaoSalvar.disabled = false;
-                    botaoSalvar.textContent = 'Salvar selecionada';
+                    botaoSalvar.textContent = 'Salvar';
                     const aviso = document.createElement('p');
                     aviso.textContent = erro.message;
                     resultado.appendChild(aviso);
