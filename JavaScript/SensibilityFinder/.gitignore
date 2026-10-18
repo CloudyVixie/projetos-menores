@@ -11,6 +11,11 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
+# Bancos de dados locais
+*.sqlite
+*.sqlite3
+*.db
+
 # Arquivos temporários do sistema
 .DS_Store
 Thumbs.db
