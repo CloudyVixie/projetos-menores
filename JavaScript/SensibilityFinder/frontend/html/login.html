@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | SensiFinder</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <main>
         <h1>Entrar</h1>
+        <p>Acesse sua conta para calcular sua sensibilidade.</p>
 
         <form id="formLogin">
             <label for="loginNome">Nome de usuário</label>
-            <input type="text" id="loginNome" required>
+            <input type="text" id="loginNome" autocomplete="username" required>
 
             <label for="loginSenha">Senha</label>
-            <input type="password" id="loginSenha" required>
+            <input type="password" id="loginSenha" autocomplete="current-password" required>
 
             <button type="submit">Entrar</button>
         </form>
 
-        <p id="mensagemLogin"></p>
+        <p id="mensagemLogin" role="status" aria-live="polite"></p>
 
-        <p>Não tem uma conta?</p>
+        <p class="link-text">Ainda não tem uma conta?</p>
         <a href="cadastro.html">Criar conta</a>
     </main>
 
