@@ -1,44 +1,98 @@
-# Sensibility Finder
+# ☁️ SensiFinder
 
-Uma página simples para calcular variações de sensibilidade em jogos de mira. O projeto usa HTML, CSS e JavaScript e roda direto no navegador.
+Um site para testar variações de sensibilidade em jogos de mira. O projeto começou como um script em Python e depois foi refeito em JavaScript.
 
-## Por que fiz esse projeto
+A interface usa um fundo de nuvens e painéis translúcidos inspirados no Liquid Glass.
 
-Antes, eu fazia esse tipo de cálculo com pequenos scripts em Python. A ideia foi transformar o cálculo em uma página que desse para usar sem abrir um programa separado.
+## O que dá para fazer
 
-## Como funciona
+- Criar uma conta e entrar com nome de usuário e senha.
+- Calcular três valores a partir da sensibilidade atual.
+- Escolher qual dos valores calculados deseja salvar.
+- Consultar o histórico de sensibilidades salvas.
+- Sair da conta pela própria interface.
 
-Informe a sensibilidade base e clique em **Calcular**. A página mostra três opções:
+## Como o cálculo funciona
 
-| Opção | Cálculo | Resultado |
-| --- | --- | --- |
-| Baixa | Base × 0,5 | Metade do valor inicial |
-| Atual | Base | O próprio valor inicial |
-| Alta | Base × 1,5 | Uma vez e meia o valor inicial |
+Ao informar uma sensibilidade, o site calcula três opções:
 
-Os botões permitem colocar a opção baixa ou alta diretamente no campo, para testar outro valor sem digitá-lo manualmente.
+| Cálculo | Fórmula | Exemplo com 4 |
+| --- | --- | ---: |
+| Metade do valor | Sensibilidade × 0,5 | 2 |
+| Valor atual | Sensibilidade × 1 | 4 |
+| Uma vez e meia | Sensibilidade × 1,5 | 6 |
 
-Todo o cálculo acontece no navegador. Não há servidor nem banco de dados.
+Os resultados aparecem como opções selecionáveis. Somente o valor escolhido é salvo no histórico da conta.
 
-## Como executar
+## Como iniciar
 
-Não é preciso instalar dependências. Abra o arquivo `index.html` em um navegador moderno.
+Você precisa ter o [Node.js](https://nodejs.org/) instalado.
 
-## Como o código está organizado
+1. Abra um terminal na pasta `JavaScript/SensibilityFinder`.
+2. Instale as dependências:
 
-- `index.html`: contém o campo de entrada, o botão de cálculo e os espaços para mostrar os resultados.
-- `script.js`: calcula as variações e atualiza os elementos da página.
-- `style.css`: organiza a interface, o fundo e os efeitos dos botões.
-- `base_background.png`: imagem usada no fundo da página.
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor:
+
+   ```bash
+   npm start
+   ```
+
+4. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
+
+O terminal precisa continuar aberto enquanto o site estiver em uso. O banco SQLite é criado em `SensiFinderDB.sqlite` quando o backend inicia.
+
+## Como organizei os arquivos
+
+```text
+SensibilityFinder/
+├── backend/
+│   ├── api/
+│   │   ├── cadastrar.js
+│   │   ├── historico.js
+│   │   ├── login.js
+│   │   └── server.js
+│   └── db.js
+├── frontend/
+│   ├── css/
+│   │   ├── cadastro.css
+│   │   ├── index.css
+│   │   └── login.css
+│   ├── html/
+│   │   ├── cadastro.html
+│   │   ├── index.html
+│   │   └── login.html
+│   ├── resources/
+│   │   └── base_background.png
+│   └── script.js
+├── SensiFinderDB.sqlite
+├── package.json
+└── nodeInit.bat
+```
+
+## Tecnologias usadas
+
+- **HTML** para a estrutura das páginas.
+- **CSS** para o layout, o fundo de nuvens e o efeito Liquid Glass.
+- **JavaScript** para os cálculos e a interação com a interface.
+- **Node.js e Express** para o servidor e as rotas da API.
+- **SQLite** para guardar as contas e o histórico.
 
 ## O que pratiquei
 
-- Manipulação do DOM
-- Eventos de clique
-- Leitura de valores de um campo
-- Cálculos com JavaScript
-- Flexbox e efeitos de CSS
+- Manipulação do DOM e eventos de formulário.
+- Requisições HTTP com `fetch` e envio de dados em JSON.
+- Criação de rotas com Express.
+- Operações SQL e relacionamento entre tabelas.
+- Organização de frontend e backend em pastas separadas.
+
+## Observação sobre segurança
+
+Este projeto é para estudo e uso local. A versão atual armazena as senhas sem hash, então não deve ser usada com senhas reais ou publicada como serviço de produção.
 
 ## Licença
 
-Este projeto usa a licença MIT do repositório principal.
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](../../LICENSE).
