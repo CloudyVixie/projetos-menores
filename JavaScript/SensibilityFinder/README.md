@@ -26,7 +26,7 @@ Os resultados aparecem como opções selecionáveis. Somente o valor escolhido �
 
 ## Como iniciar
 
-Você precisa ter o [Node.js](https://nodejs.org/) instalado.
+Você precisa ter o [Node.js](https://nodejs.org/) instalado (versão 20.17 ou superior, necessária pela versão atual do sqlite3).
 
 1. Abra um terminal na pasta `JavaScript/SensibilityFinder`.
 2. Instale as dependências:
@@ -43,7 +43,7 @@ Você precisa ter o [Node.js](https://nodejs.org/) instalado.
 
 4. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-O terminal precisa continuar aberto enquanto o site estiver em uso. O banco SQLite é criado em `SensiFinderDB.sqlite` quando o backend inicia.
+O terminal precisa continuar aberto enquanto o site estiver em uso. O banco SQLite é criado em `SensiFinderDB.sqlite` quando o backend inicia. O arquivo do banco fica local e não deve ser enviado ao GitHub.
 
 ## Como organizei os arquivos
 
@@ -51,6 +51,7 @@ O terminal precisa continuar aberto enquanto o site estiver em uso. O banco SQLi
 SensibilityFinder/
 ├── backend/
 │   ├── api/
+│   │   ├── auth.js
 │   │   ├── cadastrar.js
 │   │   ├── historico.js
 │   │   ├── login.js
@@ -58,17 +59,9 @@ SensibilityFinder/
 │   └── db.js
 ├── frontend/
 │   ├── css/
-│   │   ├── cadastro.css
-│   │   ├── index.css
-│   │   └── login.css
 │   ├── html/
-│   │   ├── cadastro.html
-│   │   ├── index.html
-│   │   └── login.html
-│   ├── resources/
-│   │   └── base_background.png
 │   └── script.js
-├── SensiFinderDB.sqlite
+├── .gitignore
 ├── package.json
 └── nodeInit.bat
 ```
@@ -80,6 +73,7 @@ SensibilityFinder/
 - **JavaScript** para os cálculos e a interação com a interface.
 - **Node.js e Express** para o servidor e as rotas da API.
 - **SQLite** para guardar as contas e o histórico.
+- **scrypt** para armazenar hashes de senha em vez de senhas em texto puro.
 
 ## O que pratiquei
 
@@ -87,11 +81,14 @@ SensibilityFinder/
 - Requisições HTTP com `fetch` e envio de dados em JSON.
 - Criação de rotas com Express.
 - Operações SQL e relacionamento entre tabelas.
-- Organização de frontend e backend em pastas separadas.
+- Sessões de login com cookie HttpOnly.
+- Validação de dados no backend.
 
-## Observação sobre segurança
+## Observações sobre segurança
 
-Este projeto é para estudo e uso local. A versão atual armazena as senhas sem hash, então não deve ser usada com senhas reais ou publicada como serviço de produção.
+As senhas novas são armazenadas com hash scrypt e salt aleatório. Contas antigas com senha em texto puro são migradas para hash no primeiro login bem-sucedido. As rotas do histórico exigem uma sessão válida e usam o usuário autenticado, em vez de confiar em um ID enviado pelo navegador.
+
+Este projeto continua sendo um projeto de estudo. Para publicar como serviço, ainda é necessário avaliar proteção contra tentativas repetidas de login, uso de HTTPS, armazenamento persistente de sessões e outras medidas de produção.
 
 ## Licença
 
