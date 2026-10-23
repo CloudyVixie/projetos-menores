@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+main > label{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    height: 400px;
+    width:400px;
+    resize: none;
+}
