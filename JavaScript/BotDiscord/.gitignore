@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+
+*.log
+logs/
+error_log
+
+node_modules/
+vendor/
+
+.cache/
+*.tmp
+*.bak
+*.swp

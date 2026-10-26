@@ -1,0 +1,1 @@
+sempre que for adicionar um código novo, dê "node comandos.js" e "node index.js" no terminal. além disso, dê F5 ou Ctrl + R no discord 
