@@ -19,6 +19,11 @@ client.on("interactionCreate", async interaction => {
         const canalPerolas = await client.channels.fetch(process.env.DISCORD_PEROLAS_CHANNEL_ID)
 
         await canalPerolas.send(`"${atrocidade}" — <@${autor.id}>,  ${data}`)
+        await interaction.reply({
+        content: "KKKKKKKKKK MUITO BOM, MANÉ",
+        ephemeral: true
+        })
+
     }
 
     if (interaction.commandName == "mensagem_anonima") {
@@ -27,6 +32,11 @@ client.on("interactionCreate", async interaction => {
 
         const canalGeral = await client.channels.fetch(process.env.DISCORD_GERAL_CHANNEL_ID)
         await canalGeral.send(`<@${destinatario.id}>, alguém mandou eu te dizer "${mensagem}"`)
+        
+        await interaction.reply({
+        content: "CUIDADO COM O QUE DIZ, DANADINHO(A)!!",
+        ephemeral: true
+        })
     }
 })
 
