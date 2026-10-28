@@ -4,34 +4,42 @@
 
 # Sobre o repositório
 
-Aqui ficam projetos pequenos que fiz durante os estudos. São exercícios, testes com tecnologias e ferramentas criadas para resolver problemas do dia a dia.
+Este repositório reúne projetos pequenos que fiz durante os estudos. Aqui ficam exercícios, testes com tecnologias e ferramentas que surgiram de ideias ou necessidades do dia a dia.
 
-Cada projeto tem sua própria pasta, com os arquivos separados para facilitar a consulta.
+Os projetos são separados por linguagem para facilitar a consulta. Aplicações maiores, com estrutura própria de frontend, backend ou banco de dados, ficam em repositórios separados.
 
-## Tecnologias que uso
-
-Python aparece em boa parte dos projetos. Também há trabalhos com JavaScript, HTML e CSS, além de experiências com outras linguagens e banco de dados.
-
-## Como os arquivos estão organizados
+## Organização
 
 ```text
 projetos-menores/
 ├── JavaScript/
+│   ├── Adivinhar/
+│   ├── BotDiscord/
+│   ├── Organizador/
+│   ├── Pokedex/
+│   └── SensibilityFinder/
 ├── Python/
 ├── LICENSE
 └── README.md
 ```
 
-As pastas ajudam a encontrar os projetos de acordo com a linguagem usada.
+## Projetos em JavaScript
 
-## Projetos
-
-| Pasta | Conteúdo |
+| Projeto | Descrição |
 | --- | --- |
-| `Python` | Exercícios e pequenos programas |
-| `JavaScript` | Projetos web com HTML, CSS e JavaScript |
+| [Adivinhar](JavaScript/Adivinhar/) | Jogo de navegador para descobrir um número. |
+| [BotDiscord](JavaScript/BotDiscord/) | Bot com comandos de barra para registrar pérolas e enviar mensagens. |
+| [Organizador](JavaScript/Organizador/) | Organiza palavras ou nomes em ordem alfabética. |
+| [Pokédex](JavaScript/Pokedex/) | Consulta dados de Pokémon pela PokéAPI. |
+| [SensibilityFinder](JavaScript/SensibilityFinder/) | Calculadora de sensibilidade para jogos de mira, com contas e histórico. |
 
-A lista cresce conforme novos projetos são adicionados.
+## Projetos em Python
+
+A pasta `Python` reúne exercícios e programas menores, como calculadoras, ferramentas de sorteio e projetos de prática com orientação a objetos.
+
+## Tecnologias
+
+Python aparece em boa parte dos projetos. Também há experiências com JavaScript, HTML, CSS, SQL e outras ferramentas estudadas ao longo do tempo.
 
 ## Estudos atuais
 
@@ -39,4 +47,4 @@ Python, Java, JavaScript, PHP e SQL.
 
 ---
 
-Feito aos poucos, conforme novas ideias aparecem.
+Os projetos são atualizados conforme estudo novas ferramentas ou desenvolvo ideias.
