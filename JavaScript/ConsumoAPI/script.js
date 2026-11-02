@@ -6,6 +6,7 @@ consumirApi(id)
 })
 
 
+
 const campoResultadoId = document.getElementById("lblId")
 const campoResultadoNome = document.getElementById("lblNome")
 const campoResultadoEmail = document.getElementById("lblEmail")
