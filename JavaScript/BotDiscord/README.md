@@ -1,13 +1,16 @@
 # BotDiscord
 
-Bot de Discord desenvolvido com JavaScript e discord.js. O projeto possui comandos de barra para registrar frases marcantes do servidor em um canal específico e enviar mensagens destinadas a outra pessoa.
+Bot de Discord desenvolvido com JavaScript e discord.js.
 
 ## Comandos
 
-- `/perola`: recebe a pessoa autora e a frase, depois publica o registro no canal configurado.
-- `/mensagem_anonima`: recebe uma pessoa destinatária e uma mensagem, e envia o conteúdo ao canal geral configurado.
+- `/perola`: registra uma frase em um canal específico.
+- `/mensagem_anonima`: envia uma mensagem ao canal geral.
+- `/cargopersonalizado`: solicita um cargo informando nome e cor hexadecimal. O pedido é enviado por mensagem privada ao responsável configurado no código.
+- `/fotoperfil`: exibe a imagem de perfil do usuário selecionado, com link para abrir ou salvar a imagem.
+- `/bioperfil`: informa a limitação de acesso à bio. A API oficial de bots do Discord não disponibiliza esse campo.
 
-As respostas de confirmação dos comandos são enviadas de forma efêmera, visíveis apenas para quem executou o comando.
+As respostas dos comandos são enviadas de forma efêmera, visíveis apenas para quem executou o comando.
 
 ## Tecnologias
 
@@ -45,7 +48,7 @@ Depois de preencher o `.env`, execute:
 node comandos.js
 ```
 
-Esse script registra os comandos de barra na aplicação do Discord.
+Esse script registra os comandos de barra da aplicação.
 
 ## Iniciar o bot
 
@@ -56,7 +59,3 @@ node index.js
 ```
 
 Mantenha o processo em execução para que o bot continue conectado. O tempo em que ele fica online depende do ambiente de hospedagem utilizado.
-
-## Observações
-
-O projeto é experimental e pode ser ampliado com validações, tratamento de erros e documentação dos comandos.
