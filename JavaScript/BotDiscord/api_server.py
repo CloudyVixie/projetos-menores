@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hmac
+import io
 import os
 import subprocess
 import sys
@@ -99,7 +100,7 @@ def synthesize():
             if result.returncode != 0:
                 raise RuntimeError(result.stderr[-500:] or "Falha ao converter áudio para OGG/Opus.")
 
-            return send_file(ogg_path, mimetype="audio/ogg", download_name="mensagem.ogg")
+            return send_file(io.BytesIO(ogg_path.read_bytes()), mimetype="audio/ogg", download_name="mensagem.ogg")
         finally:
             ogg_path.unlink(missing_ok=True)
 
