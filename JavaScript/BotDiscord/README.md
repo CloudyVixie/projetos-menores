@@ -43,19 +43,19 @@ O serviço Python utiliza o projeto [XTTS-VoiceLab](https://github.com/CloudyVix
    XTTS_API_PORT=8765
    ```
 
-5. No ambiente Python do VoiceLab, instale Flask:
+5. No ambiente virtual Python do VoiceLab, instale as dependências atualizadas:
 
    ```bash
-   pip install Flask python-dotenv
+   pip install -r requirements.txt
    ```
 
-6. Inicie a API a partir da pasta `JavaScript/BotDiscord`:
+6. Ative esse ambiente virtual e, em outro terminal, entre na pasta `JavaScript/BotDiscord`:
 
    ```bash
    python api_server.py
    ```
 
-   O serviço espera esta estrutura de pastas:
+   Execute o comando usando o Python do ambiente virtual do XTTS-VoiceLab. O serviço espera esta estrutura de pastas:
 
    ```text
    projetos/
