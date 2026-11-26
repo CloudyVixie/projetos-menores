@@ -1,17 +1,14 @@
 {
   "name": "botdiscord",
-  "version": "1.1.0",
-  "description": "Bot Discord com comandos e leitura de mensagens usando XTTS-v2",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "commands": "node comandos.js",
-    "test": "node --check index.js && node --check comandos.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "type": "module",
   "dependencies": {
-    "@discordjs/opus": "^0.10.0",
-    "@discordjs/voice": "^0.19.0",
     "discord.js": "^14.27.0",
     "dotenv": "^18.0.9"
   }
