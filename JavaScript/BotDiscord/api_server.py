@@ -3,8 +3,16 @@ from __future__ import annotations
 import hmac
 import os
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
+
+VOICE_LAB_DIR = Path(__file__).resolve().parents[3] / "XTTS-VoiceLab"
+if not VOICE_LAB_DIR.is_dir():
+    raise RuntimeError(
+        "XTTS-VoiceLab não encontrado. Coloque os dois repositórios lado a lado."
+    )
+sys.path.insert(0, str(VOICE_LAB_DIR))
 
 import imageio_ffmpeg
 from dotenv import load_dotenv
@@ -13,12 +21,11 @@ from flask import Flask, jsonify, request, send_file
 from src.audio_processor import prepare_references
 from src.tts_engine import XTTSVoiceEngine
 
-BASE_DIR = Path(__file__).resolve().parents[2]
-INPUT_DIR = BASE_DIR / "input"
-VOICE_DIR = BASE_DIR / "voices" / "default"
-OUTPUT_DIR = BASE_DIR / "output"
+INPUT_DIR = VOICE_LAB_DIR / "input"
+VOICE_DIR = VOICE_LAB_DIR / "voices" / "default"
+OUTPUT_DIR = VOICE_LAB_DIR / "output"
 
-load_dotenv(BASE_DIR / ".env")
+load_dotenv(VOICE_LAB_DIR / ".env")
 API_KEY = os.getenv("XTTS_API_KEY", "")
 PORT = int(os.getenv("XTTS_API_PORT", "8765"))
 
@@ -79,13 +86,12 @@ def synthesize():
             language=language,
         )
 
-        ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
         with tempfile.NamedTemporaryFile(suffix=".ogg", delete=False) as temporary:
             ogg_path = Path(temporary.name)
 
         try:
             result = subprocess.run(
-                [ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
+                [imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-hide_banner", "-loglevel", "error",
                  "-i", str(wav_path), "-c:a", "libopus", "-b:a", "96k",
                  "-ar", "48000", "-ac", "2", "-f", "ogg", str(ogg_path)],
                 capture_output=True, text=True, check=False,
@@ -104,7 +110,7 @@ def synthesize():
 
 if __name__ == "__main__":
     if not API_KEY:
-        raise RuntimeError("Defina XTTS_API_KEY no arquivo .env.")
+        raise RuntimeError("Defina XTTS_API_KEY no arquivo .env do XTTS-VoiceLab.")
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     app.run(host="127.0.0.1", port=PORT, threaded=False)
