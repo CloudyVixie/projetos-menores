@@ -1,13 +1,17 @@
 {
   "name": "botdiscord",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot de Discord desenvolvido com discord.js.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "register": "node comandos.js",
+    "check": "node --check index.js && node --check comandos.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "discord.js": "^14.27.0",
     "dotenv": "^18.0.9"
