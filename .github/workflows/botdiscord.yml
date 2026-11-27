@@ -1,0 +1,39 @@
+name: Validar BotDiscord
+
+on:
+  push:
+    paths:
+      - "JavaScript/BotDiscord/**"
+      - ".github/workflows/botdiscord.yml"
+  pull_request:
+    paths:
+      - "JavaScript/BotDiscord/**"
+      - ".github/workflows/botdiscord.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: JavaScript/BotDiscord
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: JavaScript/BotDiscord/package-lock.json
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Verificar sintaxe JavaScript
+        run: npm run check
