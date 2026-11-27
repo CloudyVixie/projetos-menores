@@ -15,13 +15,14 @@ As respostas dos comandos são enviadas de forma efêmera, visíveis apenas para
 ## Tecnologias
 
 - JavaScript com módulos ES
-- Node.js
+- Node.js 22 ou superior
 - discord.js
 - dotenv para variáveis de ambiente
+- GitHub Actions para validação automática
 
 ## Como configurar
 
-1. Instale uma versão recente do Node.js.
+1. Instale o Node.js 22 ou superior.
 2. Abra um terminal nesta pasta e instale as dependências:
 
    ```bash
@@ -45,17 +46,24 @@ As respostas dos comandos são enviadas de forma efêmera, visíveis apenas para
 Depois de preencher o `.env`, execute:
 
 ```bash
-node comandos.js
+npm run register
 ```
 
-Esse script registra os comandos de barra da aplicação.
+Esse script registra os comandos de barra da aplicação. Normalmente, basta executá-lo novamente quando houver alterações nos comandos.
 
 ## Iniciar o bot
 
 Execute:
 
 ```bash
-node index.js
+npm start
 ```
 
-Mantenha o processo em execução para que o bot continue conectado. O tempo em que ele fica online depende do ambiente de hospedagem utilizado.
+O processo precisa permanecer em execução para manter o bot conectado ao Discord.
+
+## GitHub Actions
+
+O workflow `.github/workflows/botdiscord.yml` instala as dependências e verifica a sintaxe dos arquivos JavaScript a cada alteração relevante no repositório. Também pode ser iniciado manualmente pela aba **Actions**.
+
+Esse workflow é destinado à validação do projeto, não à hospedagem contínua do bot. O GitHub Actions não deve ser usado como servidor permanente de um bot conectado ao Discord. Para manter a conexão ativa usando somente recursos próprios, será necessário executar o processo em um computador ligado, por exemplo, no computador local.
+
